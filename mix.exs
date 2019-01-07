@@ -39,7 +39,9 @@ defmodule LibraryApi.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:plug_cowboy, "~> 1.0"}
+      {:plug_cowboy, "~> 1.0"},
+      {:cors_plug, "~> 1.2"},
+      {:ja_serializer, "~> 0.12.0"}
     ]
   end
 

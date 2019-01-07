@@ -13,9 +13,14 @@ config :library_api,
 config :library_api, LibraryApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "hN5sDAazPIwaWvx3y/awKpP8doi14Toi/ZvsGxq3q2/H1jG7BO+RCzVxvrGiO9Rm",
-  render_errors: [view: LibraryApiWeb.ErrorView, accepts: ~w(json)],
+  render_errors: [view: LibraryApiWeb.ErrorView, accepts: ~w(json json-api)],
   pubsub: [name: LibraryApi.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json_api"]
+}
+config :phoenix, :format_encoders, "json_api": Poison
 
 # Configures Elixir's Logger
 config :logger, :console,
