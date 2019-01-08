@@ -17,10 +17,8 @@ config :library_api, LibraryApiWeb.Endpoint,
   pubsub: [name: LibraryApi.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
-config :mime, :types, %{
-  "application/vnd.api+json" => ["json_api"]
-}
-config :phoenix, :format_encoders, "json_api": Poison
+config :mime, :types, %{"application/vnd.api+json" => ["json_api"]}
+config :phoenix, :format_encoders, json_api: Poison
 
 # Configures Elixir's Logger
 config :logger, :console,
