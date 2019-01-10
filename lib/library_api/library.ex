@@ -17,5 +17,5 @@ defmodule LibraryApi.Library do
     |> Repo.update
   end
 
-  def delete_author(%Author{} = model), do Repo.delete(model)
+  def delete_author(%Author{} = model), do: Repo.delete(model)
 end
